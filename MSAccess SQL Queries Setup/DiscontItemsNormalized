@@ -1,0 +1,29 @@
+SELECT *
+FROM s3
+WHERE s3.[Product ID] Is Not NULL
+AND (s3.[Product ID] Not Like '*-DRM')
+AND (s3.[Product ID] Not Like '*-DR')
+AND (s3.[Product ID] Not Like '*-C')
+AND (s3.[Product ID] Not Like '*-M')
+AND (s3.[Product ID] Not Like '*-N')
+AND (s3.[Product ID] Not Like '*-NS')
+AND (s3.[Description #2] Not Like '* OF *')
+AND (s3.[Description #3] Not Like '* OF *')
+AND (s3.[Description #3] Not Like '*REPLACEMENT*')
+
+UNION SELECT *
+FROM s4
+WHERE s4.[Product ID] Is Not NULL
+AND (s4.[Product ID] Not Like '*-DRM')
+AND (s4.[Product ID] Not Like '*-DR')
+AND (s4.[Product ID] Not Like '*-C')
+AND (s4.[Product ID] Not Like '*-M')
+AND (s4.[Product ID] Not Like '*-N')
+AND (s4.[Product ID] Not Like '*-NS')
+AND (s4.[Description #2] Not Like '* OF *')
+AND (s4.[Description #3] Not Like '* OF *')
+AND (s4.[Description #3] Not Like '*REPLACEMENT*')
+AND ((s4.[Product ID] Not Like '*-1') AND (s4.[Product Description] Not Like '*PC*'))
+AND ((s4.[Product ID] Not Like '*-2') AND (s4.[Product Description] Not Like '*PC*'))
+AND ((s4.[Product ID] Not Like '*-3') AND (s4.[Product Description] Not Like '*PC*'))
+ORDER BY [Reg Price];
