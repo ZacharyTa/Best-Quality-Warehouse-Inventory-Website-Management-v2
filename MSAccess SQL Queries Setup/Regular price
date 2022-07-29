@@ -1,0 +1,13 @@
+SELECT [Product ID],SWITCH (
+[Reg Price] > [P/U Price], [Reg Price],
+TRUE, [P/U Price]
+) AS [Regular price]
+FROM ContItemsNormalized;
+
+UNION
+
+SELECT [Product ID],SWITCH (
+[Reg Price] > [P/U Price], [Reg Price],
+TRUE, [P/U Price]
+) AS [Regular price]
+FROM DiscontItemsNormalized;
