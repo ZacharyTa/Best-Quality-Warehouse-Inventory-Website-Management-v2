@@ -41,7 +41,7 @@ Website.csv", if match isn't found.
 > 
 > Import Accuterm's and Wordpress's Exported csv files into new table in the current database (Ex. "running.csv")
 > 
-> Delimited > Comma + First Row Contains Field Names + Indexed(Yes, No Duplicates > Choose own Primary Key (Accuterm csv files: Product ID, Wordpress csv files: Prod ID
+> Delimited > Comma + First Row Contains Field Names + Indexed(Yes, No Duplicates > Choose own Primary Key (Accuterm csv files: "Product ID", Wordpress csv files: "ID"
 > 
 > Create Queries
 >> Query one
