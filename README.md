@@ -31,6 +31,7 @@ Website.csv", if match isn't found.
 ===== HOW TO USE ==========
 - Inputs Outside of this Github Page:
 > Accuterm's Exported Data as CSV files -> "running.csv" + "s2.csv" + "s3.csv" + "s4.csv"
+
 > WordPress's Exported Inventory as CSV File (w/ WooCommerce) -> "Website Inventory.csv"
 > (NOTE: These CSV files must be named exactly as shown)
 
