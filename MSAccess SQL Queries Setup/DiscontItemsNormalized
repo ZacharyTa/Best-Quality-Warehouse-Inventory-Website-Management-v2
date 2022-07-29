@@ -1,6 +1,7 @@
 SELECT *
 FROM s3
 WHERE s3.[Product ID] Is Not NULL
+AND (s3.[Product ID] Not Like '*-SR')
 AND (s3.[Product ID] Not Like '*-DRM')
 AND (s3.[Product ID] Not Like '*-DR')
 AND (s3.[Product ID] Not Like '*-C')
@@ -11,9 +12,17 @@ AND (s3.[Description #2] Not Like '* OF *')
 AND (s3.[Description #3] Not Like '* OF *')
 AND (s3.[Description #3] Not Like '*REPLACEMENT*')
 
-UNION SELECT *
+UNION 
+SELECT * 
+FROM s3
+WHERE s3.[Product Description] LIKE '*SET*'
+
+UNION
+
+SELECT *
 FROM s4
 WHERE s4.[Product ID] Is Not NULL
+AND (s4.[Product ID] Not Like '*-SR')
 AND (s4.[Product ID] Not Like '*-DRM')
 AND (s4.[Product ID] Not Like '*-DR')
 AND (s4.[Product ID] Not Like '*-C')
@@ -26,4 +35,10 @@ AND (s4.[Description #3] Not Like '*REPLACEMENT*')
 AND ((s4.[Product ID] Not Like '*-1') AND (s4.[Product Description] Not Like '*PC*'))
 AND ((s4.[Product ID] Not Like '*-2') AND (s4.[Product Description] Not Like '*PC*'))
 AND ((s4.[Product ID] Not Like '*-3') AND (s4.[Product Description] Not Like '*PC*'))
+
+UNION 
+SELECT * 
+FROM s4
+WHERE s4.[Product Description] LIKE '*SET*'
+
 ORDER BY [Reg Price];
