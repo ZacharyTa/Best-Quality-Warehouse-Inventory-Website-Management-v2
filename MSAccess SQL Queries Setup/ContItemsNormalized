@@ -1,6 +1,7 @@
 SELECT *
 FROM running
 WHERE running.[Product ID] Is Not NULL
+AND (running.[Product ID] Not Like '*-SR')
 AND (running.[Product ID] Not Like '*-DRM')
 AND (running.[Product ID] Not Like '*-DR')
 AND (running.[Product ID] Not Like '*-C')
@@ -41,6 +42,7 @@ UNION
 SELECT *
 FROM s2
 WHERE s2.[Product ID] Is Not NULL
+AND (s2.[Product ID] Not Like '*-SR')
 AND (s2.[Product ID] Not Like '*-DRM')
 AND (s2.[Product ID] Not Like '*-DR')
 AND (s2.[Product ID] Not Like '*-C')
