@@ -8,14 +8,28 @@ AND (s3.[Product ID] Not Like '*-C')
 AND (s3.[Product ID] Not Like '*-M')
 AND (s3.[Product ID] Not Like '*-N')
 AND (s3.[Product ID] Not Like '*-NS')
+AND (s3.[Product ID] Not Like '*-NS')
 AND (s3.[Description #2] Not Like '* OF *')
 AND (s3.[Description #3] Not Like '* OF *')
 AND (s3.[Description #3] Not Like '*REPLACEMENT*')
+AND (s3.[Product ID] Not Like '*-1')
+AND (s3.[Product ID] Not Like '*-2')
+AND (s3.[Product ID] Not Like '*-3')
 
-UNION 
-SELECT * 
+
+UNION
+
+SELECT *
 FROM s3
-WHERE s3.[Product Description] LIKE '*SET*'
+WHERE (s3.[Description #3] IS NULL)
+AND (s3.[Reg Price] > 2)
+
+UNION
+
+SELECT *
+FROM s3
+WHERE (s3.[Product Description] Like '*SET*')
+OR (s3.[Product Description] Like '*SINGLE*')
 
 UNION
 
@@ -32,13 +46,22 @@ AND (s4.[Product ID] Not Like '*-NS')
 AND (s4.[Description #2] Not Like '* OF *')
 AND (s4.[Description #3] Not Like '* OF *')
 AND (s4.[Description #3] Not Like '*REPLACEMENT*')
-AND ((s4.[Product ID] Not Like '*-1') AND (s4.[Product Description] Not Like '*PC*'))
-AND ((s4.[Product ID] Not Like '*-2') AND (s4.[Product Description] Not Like '*PC*'))
-AND ((s4.[Product ID] Not Like '*-3') AND (s4.[Product Description] Not Like '*PC*'))
+AND (s4.[Product ID] Not Like '*-1')
+AND (s4.[Product ID] Not Like '*-2')
+AND (s4.[Product ID] Not Like '*-3')
 
-UNION 
-SELECT * 
+UNION
+
+SELECT *
 FROM s4
-WHERE s4.[Product Description] LIKE '*SET*'
+WHERE (s4.[Description #3] IS NULL)
+AND (s4.[Reg Price] > 2)
 
-ORDER BY [Reg Price];
+UNION
+
+SELECT *
+FROM s4
+WHERE (s4.[Product Description] Like '*SET*')
+OR (s4.[Product Description] Like '*SINGLE*')
+
+ORDER BY [Product ID] ASC;
