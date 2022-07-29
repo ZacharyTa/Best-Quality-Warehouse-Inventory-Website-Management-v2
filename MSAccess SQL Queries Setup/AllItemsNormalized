@@ -1,0 +1,7 @@
+SELECT *
+FROM ContItemsNormalized
+
+UNION
+
+SELECT *
+FROM DiscontItemsNormalized;
