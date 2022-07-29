@@ -11,12 +11,10 @@ AND (running.[Product ID] Not Like '*-NS')
 AND (running.[Description #2] Not Like '* OF *')
 AND (running.[Description #3] Not Like '* OF *')
 AND (running.[Description #3] Not Like '*REPLACEMENT*')
+AND (running.[Product ID] Not Like '*-1')
+AND (running.[Product ID] Not Like '*-2')
+AND (running.[Product ID] Not Like '*-3')
 
-UNION
-
-SELECT *
-FROM running
-WHERE (running.[Reg Price] > 2)
 
 UNION
 
@@ -29,7 +27,14 @@ UNION
 
 SELECT *
 FROM running
-WHERE (running.[Product Description] Like '* SET *')
+WHERE (running.[Reg Price] > 2)
+
+UNION
+
+SELECT *
+FROM running
+WHERE (running.[Product Description] Like '*SET*')
+OR (running.[Product Description] Like '*SINGLE*')
 
 UNION
 
@@ -66,6 +71,7 @@ UNION
 
 SELECT *
 FROM s2
-WHERE (s2.[Product Description] Like '* SET *')
+WHERE (s2.[Product Description] Like '*SET*')
+OR (s2.[Product Description] Like '*SINGLE*')
 
-ORDER BY [Reg Price] ASC;
+ORDER BY [Product ID] ASC;
