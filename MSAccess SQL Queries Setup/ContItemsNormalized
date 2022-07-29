@@ -15,6 +15,25 @@ AND (running.[Description #3] Not Like '*REPLACEMENT*')
 UNION
 
 SELECT *
+FROM running
+WHERE (running.[Reg Price] > 2)
+
+UNION
+
+SELECT *
+FROM running
+WHERE (running.[Description #3] IS NULL)
+AND (running.[Reg Price] > 2)
+
+UNION
+
+SELECT *
+FROM running
+WHERE (running.[Product Description] Like '* SET *')
+
+UNION
+
+SELECT *
 FROM s2
 WHERE s2.[Product ID] Is Not NULL
 AND (s2.[Product ID] Not Like '*-DRM')
@@ -33,29 +52,10 @@ AND (s2.[Product ID] Not Like '*-3')
 UNION
 
 SELECT *
-FROM running
-WHERE (running.[Reg Price] > 2)
-
-UNION
-
-SELECT *
 FROM s2
 WHERE (s2.[Reg Price] > 2)
 
-UNION 
-
-SELECT *
-FROM running
-WHERE (running.[Description #3] IS NULL)
-AND (running.[Reg Price] > 2)
-
 UNION
-
-SELECT *
-FROM running
-WHERE (running.[Product Description] Like '* SET *')
-
-UNION 
 
 SELECT *
 FROM s2
