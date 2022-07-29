@@ -1,0 +1,11 @@
+SELECT [Product ID],SWITCH (
+Avail > 0 AND [Reg Price] > 2, 1,
+TRUE, 0
+) AS [In stock?]
+FROM ContItemsNormalized;
+
+UNION SELECT [Product ID],SWITCH (
+Avail > 0 AND [Reg Price] > 2, 1,
+TRUE, 0
+) AS [In stock?]
+FROM DiscontItemsNormalized;
