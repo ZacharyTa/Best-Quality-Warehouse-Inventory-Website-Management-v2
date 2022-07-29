@@ -31,14 +31,18 @@ Website.csv", if match isn't found.
 ===== HOW TO USE ==========
 - Inputs Outside of this Github Page:
 > Accuterm's Exported Data as CSV files -> "running.csv" + "s2.csv" + "s3.csv" + "s4.csv"
-
+>
 > WordPress's Exported Inventory as CSV File (w/ WooCommerce) -> "Website Inventory.csv"
+> 
 > (NOTE: These CSV files must be named exactly as shown)
 
 - MSAccess Setup
 > External Data > New Data Source > From File > Text File
+> 
 > Import Accuterm's and Wordpress's Exported csv files into new table in the current database (Ex. "running.csv")
+> 
 > Delimited > Comma + First Row Contains Field Names + Indexed(Yes, No Duplicates > Choose own Primary Key (Accuterm csv files: Product ID, Wordpress csv files: Prod ID
+> 
 > Create Queries
 >> Query one
 
