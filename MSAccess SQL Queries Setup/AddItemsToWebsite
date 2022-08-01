@@ -1,0 +1,11 @@
+SELECT [Product ID], [Reg Price], Avail, Status
+FROM AllItemsNormalized
+WHERE (
+Status = 'Continue'
+OR ((Status = 'Discontinue') AND Avail > 9 AND [Reg price] > 10)
+)
+AND
+(NOT EXISTS (
+SELECT [Name] from [Website Inventory]
+WHERE [Website Inventory].[Name] = AllItemsNormalized.[Product ID]
+));
