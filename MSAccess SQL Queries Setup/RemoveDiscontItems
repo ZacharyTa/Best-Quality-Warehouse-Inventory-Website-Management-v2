@@ -1,0 +1,5 @@
+SELECT [Website Inventory].[ID], [Website Inventory].Name, [InStock?].[In stock?], [Regular price].[Regular price]
+FROM (([Website Inventory] INNER JOIN DiscontItemsNormalized ON [Website Inventory].Name = DiscontItemsNormalized.[Product ID])
+INNER JOIN [InStock?] ON DiscontItemsNormalized.[Product ID] = [InStock?].[Product ID])
+INNER JOIN [Regular price] ON [InStock?].[Product ID] = [Regular price].[Product ID]
+WHERE ((([InStock?].[In stock?])=0));
