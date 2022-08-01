@@ -5,7 +5,7 @@ AND (running.[Product ID] Not Like '*-SR')
 AND (running.[Product ID] Not Like '*-DRM')
 AND (running.[Product ID] Not Like '*-DR')
 AND (running.[Product ID] Not Like '*-C')
-AND (running.[Product ID] Not Like '*-M')
+AND (running.[Product ID] Not Like '*-M') 
 AND (running.[Product ID] Not Like '*-N')
 AND (running.[Product ID] Not Like '*-NS')
 AND (running.[Product ID] Not Like '*-NS')
@@ -15,20 +15,6 @@ AND (running.[Description #3] Not Like '*REPLACEMENT*')
 AND (running.[Product ID] Not Like '*-1')
 AND (running.[Product ID] Not Like '*-2')
 AND (running.[Product ID] Not Like '*-3')
-
-
-UNION
-
-SELECT *
-FROM running
-WHERE (running.[Description #3] IS NULL)
-AND (running.[Reg Price] > 2)
-
-UNION
-
-SELECT *
-FROM running
-WHERE (running.[Reg Price] > 2)
 
 UNION
 
@@ -56,24 +42,10 @@ AND (s2.[Product ID] Not Like '*-1')
 AND (s2.[Product ID] Not Like '*-2')
 AND (s2.[Product ID] Not Like '*-3')
 
-UNION
 
-SELECT *
-FROM s2
-WHERE (s2.[Reg Price] > 2)
-
-UNION
-
-SELECT *
-FROM s2
-WHERE (s2.[Description #3] IS NULL)
-AND (s2.[Reg Price] > 2)
-
-UNION
-
+UNION 
 SELECT *
 FROM s2
 WHERE (s2.[Product Description] Like '*SET*')
 OR (s2.[Product Description] Like '*SINGLE*')
-
-ORDER BY [Product ID] ASC;
+ORDER BY [Product ID];
