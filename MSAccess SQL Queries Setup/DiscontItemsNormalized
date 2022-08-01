@@ -16,14 +16,6 @@ AND (s3.[Product ID] Not Like '*-1')
 AND (s3.[Product ID] Not Like '*-2')
 AND (s3.[Product ID] Not Like '*-3')
 
-
-UNION
-
-SELECT *
-FROM s3
-WHERE (s3.[Description #3] IS NULL)
-AND (s3.[Reg Price] > 2)
-
 UNION
 
 SELECT *
@@ -50,18 +42,9 @@ AND (s4.[Product ID] Not Like '*-1')
 AND (s4.[Product ID] Not Like '*-2')
 AND (s4.[Product ID] Not Like '*-3')
 
-UNION
-
-SELECT *
-FROM s4
-WHERE (s4.[Description #3] IS NULL)
-AND (s4.[Reg Price] > 2)
-
-UNION
-
+UNION 
 SELECT *
 FROM s4
 WHERE (s4.[Product Description] Like '*SET*')
 OR (s4.[Product Description] Like '*SINGLE*')
-
-ORDER BY [Product ID] ASC;
+ORDER BY [Product ID];
