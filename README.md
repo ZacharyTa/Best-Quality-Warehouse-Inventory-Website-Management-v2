@@ -66,4 +66,5 @@ Website.csv", if match isn't found.
 > InStock?: Lists all valid/selleable items and Creates/Writes a boolean value to another field, "In stock", that represents its In Stock status on the website
 >
 > Regular Price: Lists all valid/selleable items and Creates/Writes an integer value to another field, "Regular price", that represents its selling price on the website
+> 
 ===============================
