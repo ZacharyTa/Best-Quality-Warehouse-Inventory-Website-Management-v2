@@ -55,7 +55,7 @@ Website.csv", if match isn't found.
 >
 > RemoveDiscontItems: Lists Discontinuing website items that are: no longer in stock or contain a nonvalid price value (Ex. <$3)
 >
-- Website Inventory Not in AllItemsNormalized: Lists website items that do not match with any valid/sellable items on Accuterm, which could the result of: Website Naming Error or Removal of Accuterm Item
+> Website Inventory Not in AllItemsNormalized: Lists website items that do not match with any valid/sellable items on Accuterm, which could the result of: Website Naming Error or Removal of Accuterm Item
 >
 > AllItemsNormalized: Lists all valid/sellable items on Accuterm (Ex. Subitems like Dressers/Nightstands are not valid/sellable while Beds/Bedroom Sets/Chairs are)
 >
