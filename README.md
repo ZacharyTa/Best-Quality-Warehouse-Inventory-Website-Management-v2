@@ -26,7 +26,7 @@ Website.csv", if match isn't found.
 > Generate List of Products in Accuterm that encountered runtime error
 - If a program throws an invalid_argument error, it will generate a CSV file "Accuterm Items with Error Naming Conventions.csv"
 (Usually due to commas in discriptions, which causes the code to read into incorrect columns)
-===============================
+
 
 ===== HOW TO USE ==========
 - Inputs Outside of this Github Page:
