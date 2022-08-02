@@ -48,22 +48,22 @@ Website.csv", if match isn't found.
 >
 > (NOTE: These Queries must be named exactly as shown in the "MSAccess SQL Queries Setup" folder)
 
-> Query Results Interpretation: 
-- AddItemsToWebsite: Lists valid/sellable items on Accuterm that is not on the Website yet
--
-- Import to Website: Updates/Writes Website Items' In Stock/Regular price status in a specific format that can easily be exported and directly imported into the website's inventory via Wordpress's Woocommerce Product Import Plugin
--
-- RemoveDiscontItems: Lists Discontinuing website items that are: no longer in stock or contain a nonvalid price value (Ex. <$3)
--
--Website Inventory Not in AllItemsNormalized: Lists website items that do not match with any valid/sellable items on Accuterm, which could the result of: Website Naming Error or Removal of Accuterm Item
--
--AllItemsNormalized: Lists all valid/sellable items on Accuterm (Ex. Subitems like Dressers/Nightstands are not valid/sellable while Beds/Bedroom Sets/Chairs are)
--
--ContItemsNormalized: Lists all Continuing valid/sellable items on Accuterm that are runnning(running)/slow selling(s2)
--
--DiscontItemsNormalized: Lists all Discontinuing valid/sellable items on Accuterm that are discontinued(s3)/closed out(s4)
--
--InStock?: Lists all valid/selleable items and Creates/Writes a boolean value to another field, "In stock", that represents its In Stock status on the website
--
--Regular Price: Lists all valid/selleable items and Creates/Writes an integer value to another field, "Regular price", that represents its selling price on the website
+- Query Results Interpretation: 
+> AddItemsToWebsite: Lists valid/sellable items on Accuterm that is not on the Website yet
+>
+> Import to Website: Updates/Writes Website Items' In Stock/Regular price status in a specific format that can easily be exported and directly imported into the website's inventory via Wordpress's Woocommerce Product Import Plugin
+>
+> RemoveDiscontItems: Lists Discontinuing website items that are: no longer in stock or contain a nonvalid price value (Ex. <$3)
+>
+- Website Inventory Not in AllItemsNormalized: Lists website items that do not match with any valid/sellable items on Accuterm, which could the result of: Website Naming Error or Removal of Accuterm Item
+>
+> AllItemsNormalized: Lists all valid/sellable items on Accuterm (Ex. Subitems like Dressers/Nightstands are not valid/sellable while Beds/Bedroom Sets/Chairs are)
+>
+> ContItemsNormalized: Lists all Continuing valid/sellable items on Accuterm that are runnning(running)/slow selling(s2)
+>
+> DiscontItemsNormalized: Lists all Discontinuing valid/sellable items on Accuterm that are discontinued(s3)/closed out(s4)
+>
+> InStock?: Lists all valid/selleable items and Creates/Writes a boolean value to another field, "In stock", that represents its In Stock status on the website
+>
+> Regular Price: Lists all valid/selleable items and Creates/Writes an integer value to another field, "Regular price", that represents its selling price on the website
 ===============================
