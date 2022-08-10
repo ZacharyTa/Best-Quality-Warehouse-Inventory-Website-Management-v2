@@ -33,6 +33,7 @@ Website.csv", if match isn't found.
 > Accuterm's Exported Data as CSV files -> "running.csv" + "s2.csv" + "s3.csv" + "s4.csv"
 >
 > WordPress's Exported Inventory as CSV File (w/ WooCommerce) -> "Website Inventory.csv"
+> Fields: ID, Name, In stock?, and Regular price
 > 
 > (NOTE: These CSV files must be named exactly as shown)
 
