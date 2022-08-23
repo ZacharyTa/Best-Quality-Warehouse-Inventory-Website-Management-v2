@@ -42,9 +42,33 @@ AND (s4.[Product ID] Not Like '*-1')
 AND (s4.[Product ID] Not Like '*-2')
 AND (s4.[Product ID] Not Like '*-3')
 
-UNION 
-SELECT *
+UNION SELECT *
 FROM s4
 WHERE (s4.[Product Description] Like '*SET*')
 OR (s4.[Product Description] Like '*SINGLE*')
+
+UNION
+
+SELECT *
+FROM s5
+WHERE s5.[Product ID] Is Not NULL
+AND (s5.[Product ID] Not Like '*-SR')
+AND (s5.[Product ID] Not Like '*-DRM')
+AND (s5.[Product ID] Not Like '*-DR')
+AND (s5.[Product ID] Not Like '*-C')
+AND (s5.[Product ID] Not Like '*-M')
+AND (s5.[Product ID] Not Like '*-N')
+AND (s5.[Product ID] Not Like '*-NS')
+AND (s5.[Description #2] Not Like '* OF *')
+AND (s5.[Description #3] Not Like '* OF *')
+AND (s5.[Description #3] Not Like '*REPLACEMENT*')
+AND (s5.[Product ID] Not Like '*-1')
+AND (s5.[Product ID] Not Like '*-2')
+AND (s5.[Product ID] Not Like '*-3')
+
+UNION SELECT *
+FROM s5
+WHERE (s5.[Product Description] Like '*SET*')
+OR (s5.[Product Description] Like '*SINGLE*')
+
 ORDER BY [Product ID];
